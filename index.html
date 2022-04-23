@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <!-- include A-Frame obviously -->
+        <script src="https://aframe.io/releases/0.7.1/aframe.min.js"></script>
+        <!-- include ar.js for A-Frame -->
+        <script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+    </head>
+
+    <body style='margin : 0px; overflow: hidden;'>
+
+        <a-scene embedded arjs>
+
+            <!-- define your gltf asset -->
+            <!-- IT19040486 - Hettiarachchi K.H.C.G -->
+            <a-assets>
+                <a-asset-item id="src01" src="src/EiffelTower.obj"></a-asset-item>
+            </a-assets>
+
+            <!-- IT19020686 - Aluthwaththage J.H -->
+            <a-assets>
+                <a-asset-item id="src02" src="src/leaning-tower-of-pisa.obj"></a-asset-item>
+            </a-assets>
+
+            <!-- IT19505954 - Dasanayaka D.M.H -->
+            <a-assets>
+                <a-asset-item id="src03" src="src/empire-state.obj"></a-asset-item>
+            </a-assets>
+
+            <!-- IT19103778 - Dharmasena H.P.S.M -->
+            <a-assets>
+                <a-asset-item id="src04" src="src/pyramid.obj"></a-asset-item>
+            </a-assets>
+
+            <!-- define a camera which will move according to the marker position -->
+
+            <a-marker preset="hiro">
+
+                <!-- IT19040486 - Hettiarachchi K.H.C.G -->
+                <a-entity obj-model="obj: #src01;" material="src: url(src/EiffelTowerTexture.png)" position="-5 0 0"
+                    rotation="0 360 0" scale=".03 .03 .03">
+                </a-entity>
+
+                <!-- IT19020686 - Aluthwaththage J.H -->
+                <a-entity obj-model="obj: #src02;" material="src: url(src/leaning-tower-of-pisa-texture.png)"
+                    position="-3 0 0" rotation="0 260 0" scale=".005 .005 .005">
+                </a-entity>
+
+                <!-- IT19505954 - Dasanayaka D.M.H -->
+                <a-entity obj-model="obj: #src03;" material="src: url(src/empire-state-texture.png)" position="-1 0 0"
+                    rotation="0 270 0" scale=".95 .95 .95">
+                </a-entity>
+
+                <!-- IT19103778 - Dharmasena H.P.S.M -->
+                <a-entity obj-model="obj: #src04;" material="src: url(src/pyramid-texture.jpg)" position="1 0 0"
+                    rotation="0 270 0" scale=".10 .10 .10">
+                </a-entity>
+            </a-marker>
+
+            <a-entity camera></a-entity>
+        </a-scene>
+
+    </body>
+
+</html>
